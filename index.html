@@ -47,16 +47,15 @@
         <h2 class="accordion-header" id="headingOne">
           <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
             aria-expanded="true" aria-controls="collapseOne">
-            AFINN-111
+            AFINN
           </button>
         </h2>
         <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
           data-bs-parent="#accordionExample">
           <div class="accordion-body">
             <p>
-              AFINN-111 is a list of English words that are rated and give a value between -5 (negative) and +5
-              (positive). Classified manually by Finn Arup Nielsen in 2000-9-2011. There are two versions of the list:
-              AFINN-111: The latest version containing 2477 words and phrases.
+              AFINN is a list of English words that are rated and give a value between -5 (negative) and +5
+              (positive). Afinn is the simplest yet popular lexicons used for sentiment analysis developed by Finn Årup Nielsen. It contains 3300+ words with a polarity score associated with each word.
             </p>
             <p>
               Scoring
@@ -73,6 +72,8 @@
               Volume 718 in CEUR Workshop Proceedings: 93-98. 2011 May. Matthew Rowe, Milan Stankovic, Aba-Sah Dadzie,
               Mariann Hardey (editors)
             </p>
+            <p>Please refer <a href="https://github.com/fnielsen/afinn">here</a> for more
+              information</p>
           </div>
         </div>
       </div>
@@ -91,10 +92,7 @@
               VADER (Valence Aware Dictionary and sEntiment Reasoner) is a lexicon and rule-based sentiment analysis
               tool that is specifically attuned to sentiments expressed in social media.
             </p>
-            <p>Hutto, C.J. & Gilbert, E.E. (2014). VADER: A Parsimonious Rule-based Model for Sentiment Analysis
-              of Social Media Text. Eighth International Conference on Weblogs and Social Media (ICWSM-14). Ann Arbor,
-              MI, June 2014.
-            </p>
+
             <p>
               The Compound score is a metric that calculates the sum of all the lexicon ratings which have been
             <ul>
@@ -103,6 +101,10 @@
               <li>neutral sentiment : (compound score > -0.05) and (compound score < 0.05) </li>
               <li>negative sentiment : (compound score <= -0.05) </li>
             </ul>
+            </p>
+            <p>Hutto, C.J. & Gilbert, E.E. (2014). VADER: A Parsimonious Rule-based Model for Sentiment Analysis
+              of Social Media Text. Eighth International Conference on Weblogs and Social Media (ICWSM-14). Ann Arbor,
+              MI, June 2014.
             </p>
             <p>Please refer <a href="https://github.com/cjhutto/vaderSentiment#introduction">here</a> for more
               information</p>
