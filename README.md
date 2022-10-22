@@ -1,2 +1,3 @@
-# sentimentanalysis
-Simple browser base sentiment analysis
+# Sentiment Analysis
+
+[DEMO](https://jianliew.me/sentimentanalysis/)
