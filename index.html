@@ -1,319 +1,342 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="h-100">
 
 <head>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-site-verification" content="UA-55422968-1">
+  <link rel="icon" href="https://jianliew.me/images/favicon.ico">
 
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
+  <script async="" src="https://www.google-analytics.com/analytics.js"></script>
+  <script
+    type="application/javascript">var doNotTrack = !1; doNotTrack || (function (e, t, n, s, o, i, a) { e.GoogleAnalyticsObject = o, e[o] = e[o] || function () { (e[o].q = e[o].q || []).push(arguments) }, e[o].l = 1 * new Date, i = t.createElement(n), a = t.getElementsByTagName(n)[0], i.async = 1, i.src = s, a.parentNode.insertBefore(i, a) }(window, document, "script", "https://www.google-analytics.com/analytics.js", "ga"), ga("create", "UA-55422968-1", "auto"), ga("send", "pageview"))</script>
   <title>Sentiment Analysis </title>
 </head>
 
-<body>
+<body class="d-flex flex-column h-100">
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
     crossorigin="anonymous"></script>
 
-  <div class="container card card-body">
+  <main class="flex-shrink-0">
+    <div class="container card card-body">
 
-    <h1>Sentiment Analysis</h1>
-    <hr>
-    <p>
-      Sentiment analysis provides a way to understand the attitudes and opinions expressed in texts.
-      Each word can be assigned an emotion or sentiment such as positive or negative or other categories such as happy,
-      joy, fear, etc. The sentiment of each word can be best identified for a particular problem. For example, when
-      studying positive and negative affects, one can ask people to identify whether a word shows positive or negative
-      meanings. This website provides several lexicons based on research to enable to see the result of a sentiment
-      analysis
-      based on several methodologies.
-    </p>
-    <p>
-    <div class="alert alert-info" role="alert">
-      The lexicon mentioned in this page can be used freely for non-commercial research and educational purposes. Please
-      contact
-      their original owners cited here for further questions.
-    </div>
-    </p>
+      <h1>Sentiment Analysis</h1>
+      <hr>
+      <p>
+        Sentiment analysis provides a way to understand the attitudes and opinions expressed in texts.
+        Each word can be assigned an emotion or sentiment such as positive or negative or other categories such as
+        happy,
+        joy, fear, etc. The sentiment of each word can be best identified for a particular problem. For example, when
+        studying positive and negative affects, one can ask people to identify whether a word shows positive or negative
+        meanings. This website provides several lexicons based on research to enable to see the result of a sentiment
+        analysis
+        based on several methodologies.
+      </p>
+      <p>
+      <div class="alert alert-info" role="alert">
+        The lexicon mentioned in this page can be used freely for non-commercial research and educational purposes.
+        Please
+        contact
+        their original owners cited here for further questions.
+      </div>
+      </p>
 
-    <div class="card card-body bg-light mb-3 accordion" id="accordionExample">
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="headingOne">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-            data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-            AFINN
-          </button>
-        </h2>
-        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
-          data-bs-parent="#accordionExample">
-          <div class="accordion-body">
-            <p>
-              AFINN is a list of English words that are rated and give a value between -5 (negative) and +5
-              (positive). Afinn is the simplest yet popular lexicons used for sentiment analysis developed by Finn Årup
-              Nielsen. It contains 3300+ words with a polarity score associated with each word. The implementation here
-              uses Afinn-165
-            </p>
-            <p>
-              Scoring
-            <ul>
-              <li> > 0 - positive sentiment</li>
-              <li> 0 - neutral sentiment</li>
-              <li>
-                < 0 - negative sentiment </li>
-            </ul>
-            </p>
-            <p>
-              Finn Årup Nielsen, "A new ANEW: evaluation of a word list for sentiment analysis in microblogs",
-              Proceedings of the ESWC2011 Workshop on 'Making Sense of Microposts': Big things come in small packages.
-              Volume 718 in CEUR Workshop Proceedings: 93-98. 2011 May. Matthew Rowe, Milan Stankovic, Aba-Sah Dadzie,
-              Mariann Hardey (editors)
-            </p>
-            <p>Please refer <a href="https://github.com/fnielsen/afinn">here</a> for more
-              information</p>
+      <div class="card card-body bg-light mb-3 accordion" id="accordionExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              AFINN
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
+            data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <p>
+                AFINN is a list of English words that are rated and give a value between -5 (negative) and +5
+                (positive). Afinn is the simplest yet popular lexicons used for sentiment analysis developed by Finn
+                Årup
+                Nielsen. It contains 3300+ words with a polarity score associated with each word. The implementation
+                here
+                uses Afinn-165
+              </p>
+              <p>
+                Scoring
+              <ul>
+                <li> > 0 - positive sentiment</li>
+                <li> 0 - neutral sentiment</li>
+                <li>
+                  < 0 - negative sentiment </li>
+              </ul>
+              </p>
+              <p>
+                Finn Årup Nielsen, "A new ANEW: evaluation of a word list for sentiment analysis in microblogs",
+                Proceedings of the ESWC2011 Workshop on 'Making Sense of Microposts': Big things come in small packages.
+                Volume 718 in CEUR Workshop Proceedings: 93-98. 2011 May. Matthew Rowe, Milan Stankovic, Aba-Sah Dadzie,
+                Mariann Hardey (editors)
+              </p>
+              <p>Please refer <a href="https://github.com/fnielsen/afinn">here</a> for more
+                information</p>
+            </div>
           </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingFour">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+              VADER
+            </button>
+          </h2>
+          <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingThree"
+            data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <p>
+                VADER (Valence Aware Dictionary and sEntiment Reasoner) is a lexicon and rule-based sentiment analysis
+                tool that is specifically attuned to sentiments expressed in social media.
+              </p>
+
+              <p>
+                The Compound score is a metric that calculates the sum of all the lexicon ratings which have been
+              <ul>
+                <li>-1(most extreme negative) and +1 (most extreme positive).</li>
+                <li>positive sentiment : (compound score >= 0.05) </li>
+                <li>neutral sentiment : (compound score > -0.05) and (compound score < 0.05) </li>
+                <li>negative sentiment : (compound score <= -0.05) </li>
+              </ul>
+              </p>
+              <p>Hutto, C.J. & Gilbert, E.E. (2014). VADER: A Parsimonious Rule-based Model for Sentiment Analysis
+                of Social Media Text. Eighth International Conference on Weblogs and Social Media (ICWSM-14). Ann Arbor,
+                MI, June 2014.
+              </p>
+              <p>Please refer <a href="https://github.com/cjhutto/vaderSentiment#introduction">here</a> for more
+                information</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              NRC Word-Emotion Association Lexicon
+            </button>
+          </h2>
+          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+            data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <p>
+                The NRC Emotion Lexicon is a list of English words and their associations with eight basic emotions
+                (anger, fear, anticipation, trust, surprise, sadness, joy, and disgust) and two sentiments (negative and
+                positive).
+                The annotations were manually done by crowd-sourcing.
+              </p>
+
+              <p>
+                Lexicon source is (C) 2016 National Research Council Canada (NRC) and this package is for research
+                purposes only. Source: http://saifmohammad.com/WebPages/NRC-Emotion-Lexicon.htm As per the terms of use
+                of
+                the NRC Emotion Lexicon, if you use the lexicon or any derivative from it, cite this paper:
+                Crowdsourcing
+                a Word-Emotion Association Lexicon, Saif Mohammad and Peter Turney, Computational Intelligence, 29 (3),
+                436-465, 2013.
+              </p>
+              <p>Please refer <a href="http://saifmohammad.com/WebPages/NRC-Emotion-Lexicon.htm">here</a> for more
+                information</p>
+              <p>Lexicon home page <a href="http://saifmohammad.com/WebPages/lexicons.html">here</a></p>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingSeven">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+              NRC Valence, Arousal, and Dominance (NRC-VAD) Lexicon
+            </button>
+          </h2>
+          <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven"
+            data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <p>
+                The NRC Valence, Arousal, and Dominance (VAD) Lexicon includes a list of more than 20,000 English words
+                and their valence,
+                arousal, and dominance scores. For a given word and a dimension (V/A/D), the scores range from 0 (lowest
+                V/A/D) to 1 (highest V/A/D).
+                The lexicon with its fine-grained real-valued scores was created by manual annotation using Best--Worst
+                Scaling. The lexicon is markedly larger than any of the existing VAD lexicons
+              </p>
+
+              <p>
+                Words play a central role in language and thought. Several influential factor analysis studies have
+                shown
+                that the primary dimensions of word meaning are valence, arousal, and dominance (VAD) (Osgood et al.,
+                1957; Russell, 1980, 2003).
+              <ul>
+                <li>valence is the positive--negative or pleasure--displeasure dimension;</li>
+                <li>arousal is the excited--calm or active--passive dimension; and</li>
+                <li>dominance is the powerful--weak or 'have full control'--'have no control' dimension.</li>
+              </ul>
+              </p>
+
+
+              <p>Please refer <a href=https://saifmohammad.com/WebPages/nrc-vad.html">here</a> for more
+                information</p>
+              <p>Lexicon home page <a href="http://saifmohammad.com/WebPages/lexicons.html">here</a></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingFive">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+              Bing
+            </button>
+          </h2>
+          <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+            data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <p>
+                General purpose English sentiment lexicon that categorizes words in a binary fashion, either positive or
+                negative
+              </p>
+
+              <p>
+                Minqing Hu and Bing Liu, ``Mining and summarizing customer reviews.'', Proceedings of the ACM SIGKDD
+                International Conference on Knowledge Discovery & Data Mining (KDD-2004), Seattle, Washington, USA, Aug
+                22-25, 2004.
+              </p>
+
+              <p>Please refer <a href="https://www.cs.uic.edu/~liub/FBS/sentiment-analysis.html">here</a> for more
+                information</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingSix">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+              Loughran-Mcdonald
+            </button>
+          </h2>
+          <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix"
+            data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <p>
+                English sentiment lexicon created for use with financial documents.
+              </p>
+
+              <p>
+                The sentiment categories are: negative, positive, uncertainty, litigious, strong modal, weak modal, and
+                constraining.
+              </p>
+
+              <p>
+                This sentiment dictionary, is modified to only categorize each word into its sentiment based on the
+                master
+                dictionary provided.
+              </p>
+
+              <p>Please refer <a href="https://sraf.nd.edu/loughranmcdonald-master-dictionary/">here</a> for more
+                information</p>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div class="mb-3">
+        <label for="formGroupExampleInput2" class="form-label"><strong>Please select methodology:</strong></label>
+        <select id="selectedAlgorithm" class="form-select" aria-label="Default select example">
+          <option selected value="afinn-165">AFINN-165</option>
+          <option value="vader">VADER</option>
+          <option value="nrc">NRC Word-Emotion Association Lexicon</option>
+          <option value="nrc-vad">NRC Valence Arousal Dominance Lexicon</option>
+          <option value="bing">Bing</option>
+          <option value="loughran">Loughran-Mcdonald</option>
+        </select>
+      </div>
+
+      <div class="mb-3">
+        <label for="formGroupExampleInput2" class="form-label"><strong>Please select preprocessing
+            method:</strong></label>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
+          <label class="form-check-label" for="flexRadioDefault1">
+            None
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" disabled>
+          <label class="form-check-label" for="flexRadioDefault2">
+            Stemming
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" disabled>
+          <label class="form-check-label" for="flexRadioDefault3">
+            Lemmatization
+          </label>
         </div>
       </div>
 
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="headingFour">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-            data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-            VADER
-          </button>
-        </h2>
-        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingThree"
-          data-bs-parent="#accordionExample">
-          <div class="accordion-body">
-            <p>
-              VADER (Valence Aware Dictionary and sEntiment Reasoner) is a lexicon and rule-based sentiment analysis
-              tool that is specifically attuned to sentiments expressed in social media.
-            </p>
-
-            <p>
-              The Compound score is a metric that calculates the sum of all the lexicon ratings which have been
-            <ul>
-              <li>-1(most extreme negative) and +1 (most extreme positive).</li>
-              <li>positive sentiment : (compound score >= 0.05) </li>
-              <li>neutral sentiment : (compound score > -0.05) and (compound score < 0.05) </li>
-              <li>negative sentiment : (compound score <= -0.05) </li>
-            </ul>
-            </p>
-            <p>Hutto, C.J. & Gilbert, E.E. (2014). VADER: A Parsimonious Rule-based Model for Sentiment Analysis
-              of Social Media Text. Eighth International Conference on Weblogs and Social Media (ICWSM-14). Ann Arbor,
-              MI, June 2014.
-            </p>
-            <p>Please refer <a href="https://github.com/cjhutto/vaderSentiment#introduction">here</a> for more
-              information</p>
-          </div>
-        </div>
+      <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label"><strong>Enter some text below for real-time
+            sentiment
+            analysis:</strong></label>
+        <p><small>It is possible to copy and paste whole paragraphs</small></p>
+        <textarea class="form-control" rows="4" placeholder="" id="inputString"></textarea>
       </div>
-
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="headingThree">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-            data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-            NRC Word-Emotion Association Lexicon
-          </button>
-        </h2>
-        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
-          data-bs-parent="#accordionExample">
-          <div class="accordion-body">
-            <p>
-              The NRC Emotion Lexicon is a list of English words and their associations with eight basic emotions
-              (anger, fear, anticipation, trust, surprise, sadness, joy, and disgust) and two sentiments (negative and
-              positive).
-              The annotations were manually done by crowd-sourcing.
-            </p>
-
-            <p>
-              Lexicon source is (C) 2016 National Research Council Canada (NRC) and this package is for research
-              purposes only. Source: http://saifmohammad.com/WebPages/NRC-Emotion-Lexicon.htm As per the terms of use of
-              the NRC Emotion Lexicon, if you use the lexicon or any derivative from it, cite this paper: Crowdsourcing
-              a Word-Emotion Association Lexicon, Saif Mohammad and Peter Turney, Computational Intelligence, 29 (3),
-              436-465, 2013.
-            </p>
-            <p>Please refer <a href="http://saifmohammad.com/WebPages/NRC-Emotion-Lexicon.htm">here</a> for more
-              information</p>
-            <p>Lexicon home page <a href="http://saifmohammad.com/WebPages/lexicons.html">here</a></p>
-          </div>
-        </div>
-      </div>
-
-
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="headingSeven">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-            data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
-            NRC Valence, Arousal, and Dominance (NRC-VAD) Lexicon
-          </button>
-        </h2>
-        <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven"
-          data-bs-parent="#accordionExample">
-          <div class="accordion-body">
-            <p>
-              The NRC Valence, Arousal, and Dominance (VAD) Lexicon includes a list of more than 20,000 English words
-              and their valence,
-              arousal, and dominance scores. For a given word and a dimension (V/A/D), the scores range from 0 (lowest
-              V/A/D) to 1 (highest V/A/D).
-              The lexicon with its fine-grained real-valued scores was created by manual annotation using Best--Worst
-              Scaling. The lexicon is markedly larger than any of the existing VAD lexicons
-            </p>
-
-            <p>
-              Words play a central role in language and thought. Several influential factor analysis studies have shown
-              that the primary dimensions of word meaning are valence, arousal, and dominance (VAD) (Osgood et al.,
-              1957; Russell, 1980, 2003).
-            <ul>
-              <li>valence is the positive--negative or pleasure--displeasure dimension;</li>
-              <li>arousal is the excited--calm or active--passive dimension; and</li>
-              <li>dominance is the powerful--weak or 'have full control'--'have no control' dimension.</li>
-            </ul>
-            </p>
-
-
-            <p>Please refer <a href=https://saifmohammad.com/WebPages/nrc-vad.html">here</a> for more
-              information</p>
-            <p>Lexicon home page <a href="http://saifmohammad.com/WebPages/lexicons.html">here</a></p>
-          </div>
-        </div>
-      </div>
-
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="headingFive">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-            data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-            Bing
-          </button>
-        </h2>
-        <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
-          data-bs-parent="#accordionExample">
-          <div class="accordion-body">
-            <p>
-              General purpose English sentiment lexicon that categorizes words in a binary fashion, either positive or
-              negative
-            </p>
-
-            <p>
-              Minqing Hu and Bing Liu, ``Mining and summarizing customer reviews.'', Proceedings of the ACM SIGKDD
-              International Conference on Knowledge Discovery & Data Mining (KDD-2004), Seattle, Washington, USA, Aug
-              22-25, 2004.
-            </p>
-
-            <p>Please refer <a href="https://www.cs.uic.edu/~liub/FBS/sentiment-analysis.html">here</a> for more
-              information</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="headingSix">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-            data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-            Loughran-Mcdonald
-          </button>
-        </h2>
-        <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix"
-          data-bs-parent="#accordionExample">
-          <div class="accordion-body">
-            <p>
-              English sentiment lexicon created for use with financial documents.
-            </p>
-
-            <p>
-              The sentiment categories are: negative, positive, uncertainty, litigious, strong modal, weak modal, and
-              constraining.
-            </p>
-
-            <p>
-              This sentiment dictionary, is modified to only categorize each word into its sentiment based on the master
-              dictionary provided.
-            </p>
-
-            <p>Please refer <a href="https://sraf.nd.edu/loughranmcdonald-master-dictionary/">here</a> for more
-              information</p>
-          </div>
-        </div>
-      </div>
-
-
-    </div>
-
-    <div class="mb-3">
-      <label for="formGroupExampleInput2" class="form-label"><strong>Please select methodology:</strong></label>
-      <select id="selectedAlgorithm" class="form-select" aria-label="Default select example">
-        <option selected value="afinn-165">AFINN-165</option>
-        <option value="vader">VADER</option>
-        <option value="nrc">NRC Word-Emotion Association Lexicon</option>
-        <option value="nrc-vad">NRC Valence Arousal Dominance Lexicon</option>
-        <option value="bing">Bing</option>
-        <option value="loughran">Loughran-Mcdonald</option>
-      </select>
-    </div>
-
-    <div class="mb-3">
-      <label for="formGroupExampleInput2" class="form-label"><strong>Please select preprocessing
-          method:</strong></label>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
-        <label class="form-check-label" for="flexRadioDefault1">
-          None
-        </label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" disabled>
-        <label class="form-check-label" for="flexRadioDefault2">
-          Stemming
-        </label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" disabled>
-        <label class="form-check-label" for="flexRadioDefault3">
-          Lemmatization
-        </label>
-      </div>
-    </div>
-
-    <div class="mb-3">
-      <label for="exampleFormControlTextarea1" class="form-label"><strong>Enter some text below for real-time sentiment
-          analysis:</strong></label>
-      <p><small>It is possible to copy and paste whole paragraphs</small></p>
-      <textarea class="form-control" rows="4" placeholder="" id="inputString"></textarea>
-    </div>
-    <!-- <div class="mb-3">
+      <!-- <div class="mb-3">
       <button type="button" class="btn btn-primary" id="run">Submit</button>
     </div> -->
 
-    <div class="mb-3">
-      <h2>Results</h2>
-      <hr>
+      <div class="mb-3">
+        <h2>Results</h2>
+        <hr>
 
-      <div class="verdict"></div>
-      <div class="result">Verdict will appear here</div>
+        <div class="verdict"></div>
+        <div class="result">Verdict will appear here</div>
+      </div>
+
+      <div class="mb-3">
+
+        <h2>Examples that could be used</h2>
+        <hr>
+        <ul>
+          <li>Good people sometimes have bad days</li>
+          <li>We are kind to good people</li>
+          <li>
+            I'd really truly love going out in this weather!
+          </li>
+          <li>
+            I do not dislike cabin cruisers
+          </li>
+          <li>
+            I love my mobile but would not recommend it to any of my colleagues.
+          </li>
+        </ul>
+      </div>
     </div>
+  </main>
+  <p></p>
 
-    <div class="mb-3">
-
-      <h2>Examples that could be used</h2>
-      <hr>
-      <ul>
-        <li>Good people sometimes have bad days</li>
-        <li>We are kind to good people</li>
-        <li>
-          I'd really truly love going out in this weather!
-        </li>
-        <li>
-          I do not dislike cabin cruisers
-        </li>
-        <li>
-          I love my mobile but would not recommend it to any of my colleagues.
-        </li>
-      </ul>
+  <footer class="footer mt-auto py-3 bg-light">
+    <div class="container">
+      <span class="text-muted">Project can be found <a
+          href="https://github.com/JianLoong/sentimentanalysis">here</a></span>
     </div>
-  </div>
+  </footer>
   <script src="./main.js"></script>
 </body>
 
