@@ -1,5 +1,11 @@
 # Sentiment Analysis
 
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/jianloong/sentimentanalysis)
+[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=square)](https://github.com/JianLoong/sentimentanalysis/issues)
+![Maintenance](https://img.shields.io/maintenance/yes/2022)
+![GitHub issues](https://img.shields.io/github/issues/JianLoong/sentimentanalysis)
+
+
 Sentiment Analysis in Javascript using the various lexicons including AFINN-165, VADER, NRC Word-Emotion Association, Bing and Loughran-McDonald.
 
 # Objective
@@ -20,6 +26,10 @@ Please visit [here](https://jianliew.me/sentimentanalysis/)
 
 - Bootstrap5 for Front End UI
 - No node modules.
+
+# Contributions
+
+- Open to contributions of new lexicons and improvements to the code base.
 
 # Citations
 
