@@ -7,7 +7,7 @@ const removePunctuation = (string) => {
 };
 
 const loadRawText = (text) => {
-  const str = removePunctuation(text);
+  const str = removePunctuation(text).toLowerCase();
   const arr = str.split(" ");
 
   return arr;

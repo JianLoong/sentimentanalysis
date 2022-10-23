@@ -3,7 +3,7 @@ importScripts("../lexicons/bing_en.min.js")
 const regex = /[!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~]/g;
 
 const removePunctuation = (string) => {
-  return string.replace(regex, "");
+  return string.replace(regex, "").toLowerCase();
 };
 
 const loadRawText = (text) => {
