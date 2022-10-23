@@ -44,7 +44,7 @@
             <p>
               AFINN is a list of English words that are rated and give a value between -5 (negative) and +5
               (positive). Afinn is the simplest yet popular lexicons used for sentiment analysis developed by Finn Årup
-              Nielsen. It contains 3300+ words with a polarity score associated with each word.
+              Nielsen. It contains 3300+ words with a polarity score associated with each word. The implementation here uses Afinn-165
             </p>
             <p>
               Scoring
@@ -136,7 +136,35 @@
       </div>
 
       <div class="accordion-item">
-        <h2 class="accordion-header" id="headingThree">
+        <h2 class="accordion-header" id="headingSix">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+            Loughran-Mcdonald
+          </button>
+        </h2>
+        <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix"
+          data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <p>
+              English sentiment lexicon created for use with financial documents.
+            </p>
+
+            <p>
+              The sentiment categories are: negative, positive, uncertainty, litigious, strong modal, weak modal, and constraining.   
+            </p>
+
+            <p>
+              This sentiment dictionary, is modified to only categorize each word into its sentiment based on the master dictionary provided.
+            </p>
+
+            <p>Please refer <a href="https://sraf.nd.edu/loughranmcdonald-master-dictionary/">here</a> for more
+              information</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingFive">
           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
             data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
             Bing
@@ -172,12 +200,14 @@
         <option value="vader">VADER</option>
         <option value="nrc">NRC</option>
         <option value="bing">Bing</option>
+        <option value="loughran">Loughran-Mcdonald</option>
       </select>
     </div>
 
     <div class="mb-3">
-      <label for="exampleFormControlTextarea1" class="form-label">Enter some text below for real-time sentiment
-        analysis:</label>
+      <label for="exampleFormControlTextarea1" class="form-label"><strong>Enter some text below for real-time sentiment
+        analysis:</strong></label>
+      <p><small>It is possible to copy and paste whole paragraphs</small></p>
       <textarea class="form-control" rows="4" placeholder="" id="inputString"></textarea>
     </div>
     <!-- <div class="mb-3">

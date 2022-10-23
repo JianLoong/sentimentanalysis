@@ -9,6 +9,7 @@ if (window.Worker) {
     const afinnWorker = new Worker("./workers/afinn-worker.js"  + '?' + Math.random());
     const nrcWorker = new Worker("./workers/nrc-worker.js"  + '?' + Math.random());
     const bingWorker = new Worker("./workers/bing-worker.js"  + '?' + Math.random());
+    const loughranWorker = new Worker("./workers/loughran-worker.js"  + '?' + Math.random());
     
 
     selectedAlgorithm.addEventListener('change', () => {
@@ -18,6 +19,7 @@ if (window.Worker) {
             case "afinn-165": processAfinn(afinnWorker, entry, result); break;
             case "nrc": processNRC(nrcWorker, entry, result); break;
             case "bing": processBing(bingWorker, entry, result); break;
+            case "loughran": processLoughran(loughranWorker, entry, result); break;
         }
     })
 
@@ -28,6 +30,7 @@ if (window.Worker) {
             case "afinn-165": processAfinn(afinnWorker, entry, result); break;
             case "nrc": processNRC(nrcWorker, entry, result); break;
             case "bing": processBing(bingWorker, entry, result); break;
+            case "loughran": processLoughran(loughranWorker, entry, result); break;
         }
     })
 } else {
@@ -37,8 +40,8 @@ if (window.Worker) {
 const processAfinn = (worker, entry, result) => {
      const verdict = document.querySelector(".verdict");
 
-    if (entry.value == ""){
-        verdict.innerHTML = "";
+    if (entry.value == "" || entry.value == undefined){
+        verdict.innerHTML = "Verdict will appear here";
         result.innerHTML = "";
         return;
     }
@@ -68,8 +71,8 @@ const processVader = (worker, entry, result) => {
 
     const verdict = document.querySelector(".verdict");
 
-    if (entry.value == ""){
-        verdict.innerHTML = "";
+    if (entry.value == "" || entry.value == undefined){
+        verdict.innerHTML = "Verdict will appear here";
         result.innerHTML = "";
         return;
     }
@@ -102,10 +105,10 @@ const processVader = (worker, entry, result) => {
     }
 }
 
-const processNRC = (worker, entry, result) => {
+const processLoughran = (worker, entry, result) => {
     const verdict = document.querySelector(".verdict");
-    if (entry.value == ""){
-        verdict.innerHTML = "";
+    if (entry.value == "" || entry.value == undefined){
+        verdict.innerHTML = "Verdict will appear here";
         result.innerHTML = "";
         return;
     }
@@ -117,16 +120,13 @@ const processNRC = (worker, entry, result) => {
         let tableHTML = '<table class="result-table table table-bordered table-striped mb-0">';
         tableHTML +=  '<thead><tr><th>Emotion</th><th>Raw Emotion Score</th></tr></thead>';
         tableHTML += "<tbody>";
-        tableHTML += "<tr><td>" + "Fear" + "</td><td>" + e.data.fear + "</td></tr>";
-        tableHTML += "<tr><td>" + "Anger" + "</td><td>" + e.data.anger + "</td></tr>";
-        tableHTML += "<tr><td>" + "Anticipation" + "</td><td>" + e.data.anticipation + "</td></tr>";
-        tableHTML += "<tr><td>" + "Trust" + "</td><td>" + e.data.trust + "</td><tr>";
-        tableHTML += "<tr><td>" + "Surprise" + "</td><td>" + e.data.surprise + "</td></tr>";
-        tableHTML += "<tr><td>" + "Positive" + "</td><td>" + e.data.positive + "</td></tr>";
         tableHTML += "<tr><td>" + "Negative" + "</td><td>" + e.data.negative + "</td></tr>";
-        tableHTML += "<tr><td>" + "Sadness" + "</td><td>" + e.data.sadness + "</td></tr>";
-        tableHTML += "<tr><td>" + "Disgust" + "</td><td>" + e.data.disgust + "</td></tr>";
-        tableHTML += "<tr><td>" + "Joy" + "</td><td>" + e.data.joy + "</td></tr>";
+        tableHTML += "<tr><td>" + "Positive" + "</td><td>" + e.data.positive + "</td></tr>";
+        tableHTML += "<tr><td>" + "Uncertainty" + "</td><td>" + e.data.uncertainty + "</td></tr>";
+        tableHTML += "<tr><td>" + "Litigious" + "</td><td>" + e.data.litigious + "</td><tr>";
+        tableHTML += "<tr><td>" + "Strong Modal" + "</td><td>" + e.data.strong_modal + "</td></tr>";
+        tableHTML += "<tr><td>" + "Weak Modal" + "</td><td>" + e.data.weak_modal + "</td></tr>";
+        tableHTML += "<tr><td>" + "Constraining" + "</td><td>" + e.data.constraining + "</td></tr>";
         tableHTML += "</tbody></table>"
 
         result.innerHTML = tableHTML;
@@ -136,7 +136,7 @@ const processNRC = (worker, entry, result) => {
 const processBing = (worker, entry, result) => {
 
     const verdict = document.querySelector(".verdict");
-    if (entry.value == ""){
+    if (entry.value == "" || entry.value == undefined){
         verdict.innerHTML = "";
         result.innerHTML = "";
         return;
@@ -151,6 +151,38 @@ const processBing = (worker, entry, result) => {
         tableHTML += "<tbody>";
         tableHTML += "<tr><td>" + "Positive" + "</td><td>" + e.data.positive + "</td></tr>";
         tableHTML += "<tr><td>" + "Negative" + "</td><td>" + e.data.negative + "</td></tr>";
+        tableHTML += "</tbody></table>"
+
+        result.innerHTML = tableHTML;
+    }
+}
+
+const processNRC = (worker, entry, result) => {
+    const verdict = document.querySelector(".verdict");
+    if (entry.value == "" || entry.value == undefined){
+        verdict.innerHTML = "Verdict will appear here";
+        result.innerHTML = "";
+        return;
+    }
+    worker.postMessage(entry.value);
+
+    worker.onmessage = function (e) {
+        verdict.innerHTML = "";
+       
+        let tableHTML = '<table class="result-table table table-bordered table-striped mb-0">';
+        tableHTML +=  '<thead><tr><th>Emotion</th><th>Raw Emotion Score</th></tr></thead>';
+        tableHTML += "<tbody>";
+        tableHTML += "<tr><td>" + "Positive" + "</td><td>" + e.data.positive + "</td></tr>";
+        tableHTML += "<tr><td>" + "Negative" + "</td><td>" + e.data.negative + "</td></tr>";
+        
+        tableHTML += "<tr><td>" + "Fear" + "</td><td>" + e.data.fear + "</td></tr>";
+        tableHTML += "<tr><td>" + "Anger" + "</td><td>" + e.data.anger + "</td></tr>";
+        tableHTML += "<tr><td>" + "Anticipation" + "</td><td>" + e.data.anticipation + "</td></tr>";
+        tableHTML += "<tr><td>" + "Trust" + "</td><td>" + e.data.trust + "</td><tr>";
+        tableHTML += "<tr><td>" + "Surprise" + "</td><td>" + e.data.surprise + "</td></tr>";
+        tableHTML += "<tr><td>" + "Sadness" + "</td><td>" + e.data.sadness + "</td></tr>";
+        tableHTML += "<tr><td>" + "Disgust" + "</td><td>" + e.data.disgust + "</td></tr>";
+        tableHTML += "<tr><td>" + "Joy" + "</td><td>" + e.data.joy + "</td></tr>";
         tableHTML += "</tbody></table>"
 
         result.innerHTML = tableHTML;
