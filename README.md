@@ -31,7 +31,7 @@ Please visit [here](https://jianliew.me/sentimentanalysis/)
 
 - Open to contributions of new lexicons and improvements to the code base.
 
-# Citations
+# References
 
 -   Finn Årup Nielsen, "A new ANEW: evaluation of a word list for sentiment analysis in microblogs",
     Proceedings of the ESWC2011 Workshop on 'Making Sense of Microposts': Big things come in small packages.
