@@ -44,7 +44,8 @@
             <p>
               AFINN is a list of English words that are rated and give a value between -5 (negative) and +5
               (positive). Afinn is the simplest yet popular lexicons used for sentiment analysis developed by Finn Årup
-              Nielsen. It contains 3300+ words with a polarity score associated with each word. The implementation here uses Afinn-165
+              Nielsen. It contains 3300+ words with a polarity score associated with each word. The implementation here
+              uses Afinn-165
             </p>
             <p>
               Scoring
@@ -135,7 +136,7 @@
         </div>
       </div>
 
-      
+
       <div class="accordion-item">
         <h2 class="accordion-header" id="headingFive">
           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -178,11 +179,13 @@
             </p>
 
             <p>
-              The sentiment categories are: negative, positive, uncertainty, litigious, strong modal, weak modal, and constraining.   
+              The sentiment categories are: negative, positive, uncertainty, litigious, strong modal, weak modal, and
+              constraining.
             </p>
 
             <p>
-              This sentiment dictionary, is modified to only categorize each word into its sentiment based on the master dictionary provided.
+              This sentiment dictionary, is modified to only categorize each word into its sentiment based on the master
+              dictionary provided.
             </p>
 
             <p>Please refer <a href="https://sraf.nd.edu/loughranmcdonald-master-dictionary/">here</a> for more
@@ -206,8 +209,30 @@
     </div>
 
     <div class="mb-3">
+      <label for="formGroupExampleInput2" class="form-label"><strong>Please select preprocessing method:</strong></label>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
+        <label class="form-check-label" for="flexRadioDefault1">
+          None
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" disabled>
+        <label class="form-check-label" for="flexRadioDefault2">
+          Stemming
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" disabled>
+        <label class="form-check-label" for="flexRadioDefault3">
+          Lemmatization
+        </label>
+      </div>
+    </div>
+
+    <div class="mb-3">
       <label for="exampleFormControlTextarea1" class="form-label"><strong>Enter some text below for real-time sentiment
-        analysis:</strong></label>
+          analysis:</strong></label>
       <p><small>It is possible to copy and paste whole paragraphs</small></p>
       <textarea class="form-control" rows="4" placeholder="" id="inputString"></textarea>
     </div>
