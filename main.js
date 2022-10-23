@@ -5,10 +5,10 @@ if (window.Worker) {
     
     const selectedAlgorithm = document.getElementById("selectedAlgorithm");
 
-    const vaderWorker = new Worker("vader-worker.js");
-    const afinnWorker = new Worker("afinn-worker.js");
-    const nrcWorker = new Worker("nrc-worker.js");
-    const bingWorker = new Worker("bing-worker.js");
+    const vaderWorker = new Worker("./workers/vader-worker.js"  + '?' + Math.random());
+    const afinnWorker = new Worker("./workers/afinn-worker.js"  + '?' + Math.random());
+    const nrcWorker = new Worker("./workers/nrc-worker.js"  + '?' + Math.random());
+    const bingWorker = new Worker("./workers/bing-worker.js"  + '?' + Math.random());
     
 
     selectedAlgorithm.addEventListener('change', () => {
@@ -35,9 +35,7 @@ if (window.Worker) {
 }
 
 const processAfinn = (worker, entry, result) => {
-    console.log("In afinn")
-
-    const verdict = document.querySelector(".verdict");
+     const verdict = document.querySelector(".verdict");
 
     if (entry.value == ""){
         verdict.innerHTML = "";
@@ -62,12 +60,9 @@ const processAfinn = (worker, entry, result) => {
 
         let tableHTML = '<table class="result-table table table-bordered table-striped mb-0"><thead><tr><th>Score</th></thead>';
 
-        console.log(e.data)
-
         result.innerHTML = tableHTML + "<tr><td>" + e.data + "</td></tr></table>";
     }
 }
-
 
 const processVader = (worker, entry, result) => {
 
@@ -107,7 +102,6 @@ const processVader = (worker, entry, result) => {
     }
 }
 
-
 const processNRC = (worker, entry, result) => {
     const verdict = document.querySelector(".verdict");
     if (entry.value == ""){
@@ -138,7 +132,6 @@ const processNRC = (worker, entry, result) => {
         result.innerHTML = tableHTML;
     }
 }
-
 
 const processBing = (worker, entry, result) => {
 
