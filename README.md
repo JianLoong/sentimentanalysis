@@ -51,3 +51,7 @@ Please visit [here](https://jianliew.me/sentimentanalysis/)
 -   Minqing Hu and Bing Liu, ``Mining and summarizing customer reviews.'', Proceedings of the ACM SIGKDD
     International Conference on Knowledge Discovery & Data Mining (KDD-2004), SeattlWashington, USA, Aug
     22-25, 2004.
+
+-   Word Affect Intensities. Saif M. Mohammad. In Proceedings of the 11th Edition of the Language Resources and Evaluation Conference (LREC-2018), May 2018, Miyazaki, Japan.
+
+- Obtaining Reliable Human Ratings of Valence, Arousal, and Dominance for 20,000 English Words. Saif M. Mohammad. In Proceedings of the 56th Annual Meeting of the Association for Computational Linguistics, Melbourne, Australia, July 2018.

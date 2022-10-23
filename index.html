@@ -24,10 +24,20 @@
     <h1>Sentiment Analysis</h1>
     <hr>
     <p>
+      Sentiment analysis provides a way to understand the attitudes and opinions expressed in texts.
       Each word can be assigned an emotion or sentiment such as positive or negative or other categories such as happy,
       joy, fear, etc. The sentiment of each word can be best identified for a particular problem. For example, when
       studying positive and negative affects, one can ask people to identify whether a word shows positive or negative
-      meanings.
+      meanings. This website provides several lexicons based on research to enable to see the result of a sentiment
+      analysis
+      based on several methodologies.
+    </p>
+    <p>
+    <div class="alert alert-info" role="alert">
+      The lexicon mentioned in this page can be used freely for non-commercial research and educational purposes. Please
+      contact
+      their original owners cited here for further questions.
+    </div>
     </p>
 
     <div class="card card-body bg-light mb-3 accordion" id="accordionExample">
@@ -126,16 +136,51 @@
               a Word-Emotion Association Lexicon, Saif Mohammad and Peter Turney, Computational Intelligence, 29 (3),
               436-465, 2013.
             </p>
-            <p>
-              NLTK data is (C) 2019, NLTK Project. Source: [NLTK] (https://www.nltk.org/). Reference: Bird, Steven,
-              Edward Loper and Ewan Klein (2009), Natural Language Processing with Python. O’Reilly Media Inc.
-            </p>
             <p>Please refer <a href="http://saifmohammad.com/WebPages/NRC-Emotion-Lexicon.htm">here</a> for more
               information</p>
+            <p>Lexicon home page <a href="http://saifmohammad.com/WebPages/nrc-vad.html">here</a></p>
           </div>
         </div>
       </div>
 
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingSeven">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+            NRC Valence, Arousal, and Dominance (NRC-VAD) Lexicon
+          </button>
+        </h2>
+        <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven"
+          data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <p>
+              The NRC Valence, Arousal, and Dominance (VAD) Lexicon includes a list of more than 20,000 English words
+              and their valence,
+              arousal, and dominance scores. For a given word and a dimension (V/A/D), the scores range from 0 (lowest
+              V/A/D) to 1 (highest V/A/D).
+              The lexicon with its fine-grained real-valued scores was created by manual annotation using Best--Worst
+              Scaling. The lexicon is markedly larger than any of the existing VAD lexicons
+            </p>
+
+            <p>
+              Words play a central role in language and thought. Several influential factor analysis studies have shown
+              that the primary dimensions of word meaning are valence, arousal, and dominance (VAD) (Osgood et al.,
+              1957; Russell, 1980, 2003).
+            <ul>
+              <li>valence is the positive--negative or pleasure--displeasure dimension;</li>
+              <li>arousal is the excited--calm or active--passive dimension; and</li>
+              <li>dominance is the powerful--weak or 'have full control'--'have no control' dimension.</li>
+            </ul>
+            </p>
+
+
+            <p>Please refer <a href="http://saifmohammad.com/WebPages/NRC-Emotion-Lexicon.htm">here</a> for more
+              information</p>
+            <p>Lexicon home page <a href="http://saifmohammad.com/WebPages/nrc-vad.html">here</a></p>
+          </div>
+        </div>
+      </div>
 
       <div class="accordion-item">
         <h2 class="accordion-header" id="headingFive">
@@ -202,14 +247,16 @@
       <select id="selectedAlgorithm" class="form-select" aria-label="Default select example">
         <option selected value="afinn-165">AFINN-165</option>
         <option value="vader">VADER</option>
-        <option value="nrc">NRC</option>
+        <option value="nrc">NRC Word-Emotion Association Lexicon</option>
+        <option value="nrc-vad">NRC Valence Arousal Dominance Lexicon</option>
         <option value="bing">Bing</option>
         <option value="loughran">Loughran-Mcdonald</option>
       </select>
     </div>
 
     <div class="mb-3">
-      <label for="formGroupExampleInput2" class="form-label"><strong>Please select preprocessing method:</strong></label>
+      <label for="formGroupExampleInput2" class="form-label"><strong>Please select preprocessing
+          method:</strong></label>
       <div class="form-check">
         <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
         <label class="form-check-label" for="flexRadioDefault1">
