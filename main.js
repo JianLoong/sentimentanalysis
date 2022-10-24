@@ -133,10 +133,22 @@ const processLoughran = (worker, entry, result) => {
         result.innerHTML = "";
         return;
     }
+
     worker.postMessage(entry.value);
 
     worker.onmessage = function (e) {
         verdict.innerHTML = "";
+
+        if (e.data.negative == e.data.positive) {
+            verdict.innerHTML = '<div class="alert alert-info" role="alert">Neutral</div>';
+        } else {
+            if (e.data.negative > e.data.positive){
+                verdict.innerHTML = '<div class="alert alert-warning" role="alert">Negative</div>';
+            }else{
+                verdict.innerHTML = '<div class="alert alert-success" role="alert">Positive</div>';
+            }
+        }
+
 
         let tableHTML = '<table class="result-table table table-bordered table-striped mb-0">';
         tableHTML += '<thead><tr><th>Emotion</th><th>Raw Emotion Score</th></tr></thead>';
@@ -167,6 +179,17 @@ const processBing = (worker, entry, result) => {
     worker.onmessage = function (e) {
         verdict.innerHTML = "";
 
+        if (e.data.negative == e.data.positive) {
+            verdict.innerHTML = '<div class="alert alert-info" role="alert">Neutral</div>';
+        } else {
+            if (e.data.negative > e.data.positive){
+                verdict.innerHTML = '<div class="alert alert-warning" role="alert">Negative</div>';
+            }else{
+                verdict.innerHTML = '<div class="alert alert-success" role="alert">Positive</div>';
+            }
+        }
+
+
         let tableHTML = '<table class="result-table table table-bordered table-striped mb-0">';
         tableHTML += '<thead><tr><th>Emotion</th><th>Raw Emotion Score</th></tr></thead>';
         tableHTML += "<tbody>";
@@ -189,6 +212,16 @@ const processNRC = (worker, entry, result) => {
 
     worker.onmessage = function (e) {
         verdict.innerHTML = "";
+
+        if (e.data.negative == e.data.positive) {
+            verdict.innerHTML = '<div class="alert alert-info" role="alert">Neutral</div>';
+        } else {
+            if (e.data.negative > e.data.positive){
+                verdict.innerHTML = '<div class="alert alert-warning" role="alert">Negative</div>';
+            }else{
+                verdict.innerHTML = '<div class="alert alert-success" role="alert">Positive</div>';
+            }
+        }
 
         let tableHTML = '<table class="result-table table table-bordered table-striped mb-0">';
         tableHTML += '<thead><tr><th>Emotion</th><th>Raw Emotion Score</th></tr></thead>';
